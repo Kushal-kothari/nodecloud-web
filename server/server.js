@@ -6,7 +6,7 @@ app.set("port", process.env.PORT || 4000);
 app.use(express.static("public"));
 app.use(cors());
 
-const db = require("../server/db");
+const db = require("../ser/db");
 
 const authRoutes = require("./routes/auth");
 app.use("/", authRoutes);
@@ -21,11 +21,11 @@ app.get("/", function(req, res) {
   return res.redirect("/login");
 });
 
-var server = app.listen(app.get("port"), () => {
+var ser = app.listen(app.get("port"), () => {
   console.log("Listening to port: ", app.get("port"));
 });
 
-// server.close(function(err) {
+// ser.close(function(err) {
 //   if (err) {
 //     console.log(err);
 //     //process.exit(1);
@@ -33,4 +33,6 @@ var server = app.listen(app.get("port"), () => {
 //     //process.exit(0);
 //   }
 // });
-module.exports = server;
+module.exports = ser;
+
+
